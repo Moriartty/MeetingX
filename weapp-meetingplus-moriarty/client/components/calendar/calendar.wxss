@@ -1,0 +1,47 @@
+.calen_container{
+  width:100%;
+  background: #595959;
+  /* height: 120px; */
+  height: 250rpx;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.calen_header{
+  text-align: center;
+  font-size:32rpx;
+  color: white;
+  padding-top: 20rpx
+}
+.back_month,.next_month{
+  height:40rpx;
+  width:40rpx;
+  padding: 0px 40rpx;
+  display: inline-block
+}
+.cur_month{
+  height:40rpx;
+  width:200rpx;
+  display:inline-block;
+}
+.calen_body{
+  color:white;
+  font-size: 30rpx;
+  width:auto; 
+  margin-top:30rpx;
+}
+.calen_item{
+  display: inline-block;
+  text-align: center;
+  padding: 10rpx 40rpx;
+}
+.calen_text{
+  width:40rpx;
+  height:40rpx;
+  margin-bottom: 20rpx;
+  padding: 10rpx;
+  border-radius: 100rpx;
+}
+.selected{
+  background: white;
+  color:black;
+}

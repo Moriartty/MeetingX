@@ -1,0 +1,15 @@
+<view class="calen_container">
+   <view class='calen_header'>
+    <image class='back_month' src="./images/return.png" bindtap='back'/>
+    <label class='cur_month' style='vertical-align:top'>{{curSelectedMonth[0]}}年{{curSelectedMonth[1]}}月</label>
+    <image class='next_month' src="./images/enter.png" bindtap='next'></image>
+  </view> 
+  <scroll-view class='calen_body' scroll-x>
+    <view class='calen_item' wx:for="{{curSelectedMonthList}}" wx:key="{{item.date}}">
+      <view class="calen_text {{curSelectedDate == item.date ? 'selected' : ''}}" bindtap='handleItemClick' data-id="{{item.date}}">
+        <text>{{item.date}}</text>
+      </view>
+      <text style='display:block'>{{item.day}}</text>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "新建分组",
+    "navigationBarBackgroundColor": "#595959",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+      "contactsList": "../../../components/contacts/contacts"
+    }
+}

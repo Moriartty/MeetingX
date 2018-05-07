@@ -1,0 +1,7 @@
+<!--components/searchbar/searchbar.wxml-->
+<view class='searchBar_container'>
+  <view class='searchBar_body'>
+    <input class='search_input' placeholder='搜索' bindinput='_handleInput' value='{{defaultVal}}'></input>
+    <image src='../../images/delete_fill.svg' class='clear' bindtap='_clear'></image>
+  </view>
+</view>

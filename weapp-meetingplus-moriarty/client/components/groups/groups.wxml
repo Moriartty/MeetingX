@@ -1,0 +1,60 @@
+<!--components/groups/groups.wxml-->
+<scroll-view class='groupsList_container'>
+  <block>
+    <template is="{{displayFlag==0?'normal-list':'normal-list-selectable'}}" 
+    data="{{templateData}}">
+    </template>
+  </block>
+</scroll-view>
+<template name="normal-list">
+   <view class='group-list' wx:for="{{templateData.groupsList}}" wx:key="{{item.id}}">
+    <view class='group-header' bindtap='toggleGroup' data-id="{{item.id}}">
+      <view class='header-head'>
+        <image src="../../images/group_fill.svg" style='width:50rpx;height:50rpx;padding:0 30rpx'></image>
+         <text class='group-name' style='padding:0 20rpx;font-size:32rpx'>{{item.name}}</text> 
+         <text class='count' style="font-size:25rpx">({{item.count}}人)</text> 
+      </view>
+      <image class='toggle-group' src="{{templateData.status[item.id]==false?'../../images/unfold.png':'../../images/packup.png'}}"></image>
+    </view>
+    <view class=" {{templateData.status[item.id]==false?'hidden':'group-content'}}" wx:for="{{item.val}}" wx:for-item="val" wx:for-index="idx" wx:key="{{val.id}}">
+      <view class='avatar'>
+        <image src="../../images/people_fill.svg" style='width:50rpx;height:50rpx'></image>
+      </view>
+      <view class='name'>{{val.name}}</view>
+      <view class='info'>
+        <text>{{val.email}}</text>
+        <text>{{val.phone}}</text>
+      </view>
+    </view>
+    <view class='add_group' bindtap='_handleAddGroup'>
+      <image src='../../images/add.svg' style='width:30px;height:30px'></image>
+    </view>
+  </view> 
+</template>
+<template name="normal-list-selectable">
+  <checkbox-group>
+    <view class='group-list' wx:for="{{templateData.groupsList}}" wx:key="{{item.id}}">
+      <view class='group-header' bindtap='toggleGroup' data-id="{{item.id}}">
+        <view class='header-head'>
+          <image src="../../images/group_fill.svg" style='width:50rpx;height:50rpx;padding:0 30rpx'></image>
+          <text class='group-name' style='padding:0 20rpx;font-size:40rpx'>{{item.name}}</text> 
+          <text class='count' style="font-size:30rpx">({{item.count}}人)</text> 
+        </view>
+        <view class='header-tail'>
+          <checkbox value='{{item.id}}' checked="{{item.checked}}"></checkbox>
+          <image class='toggle-group' src="{{templateData.status[item.id]==false?'../../images/unfold.png':'../../images/packup.png'}}"></image>
+        </view>
+      </view>
+      <view class=" {{templateData.status[item.id]==false?'hidden':'group-content'}}" wx:for="{{item.val}}" wx:for-item="val" wx:for-index="idx" wx:key="{{val.id}}">
+        <view class='avatar'>
+          <image src="../../images/people_fill.svg" style='width:50rpx;height:50rpx'></image>
+        </view>
+        <view class='name'>{{val.name}}</view>
+        <view class='info'>
+          <text>{{val.email}}</text>
+          <text>{{val.phone}}</text>
+        </view>
+      </view>
+    </view> 
+  </checkbox-group>
+</template>

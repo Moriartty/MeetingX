@@ -1,0 +1,110 @@
+<!--components/contacts/contacts.wxml-->
+<view class="searchBar">
+  <searchBar bind:_handleInput="handleInput" bind:_clear="handleInput"></searchBar>
+</view>
+<view style='height:100rpx'></view>
+<view class='contactsList_container'>
+    <scroll-view class='contactsList_body' scroll-y scroll-into-view="{{toView}}" style="height:{{displayFlag==1?'78vh':'87vh'}}">
+      <block wx:if="{{displayFlag==0}}">
+        <block wx:if="{{searchContent==''}}">
+          <block wx:if="{{contactsList.length>0}}">
+            <template is="category-list" data="{{templateData}}"></template>
+          </block>
+        </block>
+        <block wx:else>
+          <block wx:if="{{matchedList}}">
+            <template is="normal-list" data="{{matchedList}}"></template>
+          </block>
+        </block>
+      </block>
+      <block wx:else>
+        <block wx:if="{{searchContent==''}}">
+          <block wx:if="{{contactsList.length>0}}">
+            <template is="category-list-selectable" data="{{templateData}}"></template>
+          </block>
+        </block>
+        <block wx:else>
+          <block wx:if="{{matchedList}}">
+            <template is="normal-list-selectable" data="{{matchedList}}"></template>
+          </block>
+        </block>
+      </block>
+    </scroll-view> 
+    <view class='sideBar'>
+      <view class="letter {{item==toView?'active':''}}" wx:for="{{alphabat}}" data-id="{{item=='☆'?'常用联系人':item}}" bindtap='_handleClickSidebar' wx:key="{{item}}" style="font-size:{{displayFlag==0?'26rpx':'25rpx'}}">
+      {{item}}
+      </view>
+    </view>
+</view>
+<template name="normal-list">
+  <view class='subList_body' wx:for="{{matchedList}}" wx:key="{{item.id}}">
+    <view class='avatar'>
+      <image src="../../images/people_fill.svg" style='width:50rpx;height:50rpx'></image>
+    </view>
+    <view class='name'>{{item.name}}</view>
+    <view class='info'>
+      <text>{{item.email}}</text>
+      <text>{{item.phone}}</text>
+    </view>
+  </view>
+</template>
+<template name="normal-list-selectable">
+  <checkbox-group>
+    <view class='subList_body' wx:for="{{matchedList}}" wx:key="{{item.id}}">
+      <view class='avatar'>
+        <image src="../../images/people_fill.svg" style='width:50rpx;height:50rpx'></image>
+      </view>
+      <view class='checkbox'>
+        <checkbox value='{{item.id}}' checked="{{item.checked}}"></checkbox>
+      </view>
+      <view class='name'>{{item.name}}</view>
+      <view class='info'>
+        <text>{{item.email}}</text>
+        <text>{{item.phone}}</text>
+    </view>
+  </view>
+  </checkbox-group>
+</template>
+
+<template name="category-list">
+    <view class="subList" wx:for="{{templateData.contactsList}}" wx:key="{{item.type}}">
+      <view class='subList_header' id="{{item.type}}" bindtap='_handleHeadTap' data-id="{{item.type}}">
+        {{item.type}}
+        <image class='toggle-group' src="{{templateData.status[item.type]==false?'../../images/unfold.png':'../../images/packup.png'}}"></image>
+      </view>
+      <view class="{{templateData.status[item.type] == true?'subList_body':'hidden'}}" wx:for="{{item.val}}" wx:for-index="idx" wx:for-item="val" wx:key="{{idx}}">
+        <view class='avatar'>
+          <image src='../../images/people_fill.svg' style='width:50rpx;height:50rpx'></image> 
+        </view>   
+        <view class='name'>{{val.name}}</view>
+        <view class='info'>
+          <text>{{val.email}}</text>
+          <text>{{val.phone}}</text>
+        </view>
+      </view>  
+  </view>
+</template>
+<template name="category-list-selectable">
+  <checkbox-group bindchange="_checkboxChange">
+  <view class="subList" wx:for="{{templateData.contactsList}}" wx:key="{{item.type}}">
+    <view class='subList_header' id="{{item.type}}" bindtap='_handleHeadTap' data-id="{{item.type}}">
+      {{item.type}}
+      <image class='toggle-group' src="{{templateData.status[item.type]==false?'../../images/unfold.png':'../../images/packup.png'}}"></image>
+    </view>
+    <view class="{{templateData.status[item.type] == true?'subList_body':'hidden'}}" wx:for="{{item.val}}" wx:for-index="idx" wx:for-item="val" wx:key="{{idx}}">
+      <view class='avatar'>
+        <image src='../../images/people_fill.svg' style='width:50rpx;height:50rpx'></image> 
+      </view>   
+      <view class='checkbox'>
+        <checkbox value='{{val.id}}' checked="{{val.checked}}"></checkbox>
+      </view>
+      <view class='name'>{{val.name}}</view>
+      <view class='info'>
+        <text>{{val.email}}</text>
+        <text>{{val.phone}}</text>
+      </view>
+    </view>  
+  </view>
+  </checkbox-group>
+</template>
+

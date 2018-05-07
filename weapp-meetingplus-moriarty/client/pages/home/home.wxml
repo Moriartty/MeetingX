@@ -1,0 +1,41 @@
+<view class="wait-item-container">
+  <view class='topMenu'>
+     <view class='add_meeting'>
+        <image class='add_meeting_button' src='../../images/brush_fill.png'></image>
+        <label style='display:block'>新建会议</label> 
+    </view>
+    <view class='open_draft'>
+        <image class='open_draft_button' src='../../images/document_fill.png'></image>
+        <label style='display:block'>草稿</label>
+    </view> 
+  </view>
+  <view style='height:240rpx'></view>
+   <view class="navbar">
+    <view class="navbar-item" wx:for="{{navbar}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav">
+      <text class="navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
+    </view>
+  </view> 
+  <view style='height:40px'></view>
+  <view class="orderTab {{currentNavbar==0 ? '' : 'hidden'}}">
+    <view wx:if="{{orderListShow}}">
+      <timeList orderList="{{orderList}}" class=""></timeList>
+    </view>
+    <view class='nodata' wx:else>
+      <view style='width:100%;text-align:center'>
+          <image src='../../images/document.svg' style='width:200rpx;height:200rpx'></image>
+          <view><text>暂无记录</text></view>
+        </view>
+    </view>
+  </view>
+  <view class="messageTab {{currentNavbar==1 ? '' : 'hidden'}}">
+      <view wx:if="{{messageListShow}}">
+          <messageList class="" messageList="{{messageList}}"></messageList> 
+      </view>
+      <view class='nodata' wx:else>
+        <view style='width:100%;text-align:center'>
+          <image src='../../images/document.svg' style='width:200rpx;height:200rpx'></image>
+          <view><text>暂无记录</text></view>
+        </view>
+      </view>
+  </view>
+</view>

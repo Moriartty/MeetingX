@@ -1,0 +1,56 @@
+/* pages/meeting/meeting.wxss */
+/* .navbar {
+    display: flex;
+    border-bottom: 1px solid #eee;
+} */
+.searchBar{
+  position: fixed;
+  z-index: 10;
+  background: white;
+  border-top:1px solid #eee;
+  border-bottom:1px solid #eee;
+  width: 100%;
+  top:0;
+}
+.navbar {
+    position: fixed;
+    display: flex;
+    border-bottom: 2rpx solid #eee;
+    width:100%;
+    height:80rpx;
+    background-color: white;
+    color: black;
+    z-index:10;
+    top:104rpx;
+}
+.navbar-item {
+    flex: 1.0;
+    text-align: center;
+    font-size: 30rpx;
+    color: #999;
+    margin-bottom: -1rpx;
+}
+.navbar-text {
+    display: block;
+    width: 120rpx;
+    padding: 20rpx;
+    margin: auto;
+}
+.navbar-text.active {
+    border-bottom: 6rpx solid #000;
+    color: #000;
+    font-weight: bold;
+}
+.hidden{
+  display:none;
+}
+
+.nodata{
+  width:100%;
+  text-align: center;
+  height: 800rpx;
+  font-size: 35rpx;
+  color:#bfbfbf;
+  display: flex;
+  align-items: center;
+}

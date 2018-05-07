@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "会议详情",
+  "navigationBarBackgroundColor": "#595959",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    
+  }
+}

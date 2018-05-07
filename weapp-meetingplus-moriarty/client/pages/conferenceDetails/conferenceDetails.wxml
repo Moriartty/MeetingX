@@ -1,0 +1,56 @@
+<!--pages/conferenceDetails/conferenceDetails.wxml-->
+<view class='details-container'>
+  <view class='order-detail'>
+    <view class='subject'>{{orderDetails.details.subject}}</view>
+    <view class='contents'>
+      <view class='room'>
+        <image src='../../images/coordinates.svg' class='icon'></image>
+        <text class='title'>会议地点</text>
+        <text class='content'>{{orderDetails.details.name}}</text>
+      </view>
+      <view class='startTime'>
+        <image src='../../images/time.png' class='icon'></image>
+        <text class='title'>开始时间</text>
+        <text class='content'>{{orderDetails.details.day}} {{orderDetails.details.begin}}</text>
+      </view>
+      <view class='endTime'>
+        <image src='../../images/time.png' class='icon'></image>
+        <text class='title'>结束时间</text>
+        <text class='content'>{{orderDetails.details.day}} {{orderDetails.details.end}}</text>
+      </view>
+      <view class='sponsor'>
+        <image src='../../images/people.svg' class='icon'></image>
+        <text class='title'>发起人</text>
+        <text class='content'>{{orderDetails.details.user_name}}</text>
+      </view>
+      <view class='dept'>
+        <image src='../../images/label.svg' class='icon'></image>
+        <text class='title'>部门</text>
+        <text class='content' style='font-size:23rpx'>{{orderDetails.details.department}}</text>
+      </view>
+      <view class='phone'>
+        <image src='../../images/mobilephone.svg' class='icon'></image>
+        <text class='title'>联系电话</text>
+        <text class='content'>{{orderDetails.details.phone}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='order-attendance'>
+    <view class="attendance-header">
+      <view><text>与会人员</text></view>
+      <view style='display:flex;align-items:center'><button wx:if="{{canAddPerson}}" size='mini' type='primary' class='addPerson' bindtap='_handleAddPerson'>添加与会人</button></view>
+    </view>
+    <scroll-view>
+      <view wx:for="{{orderDetails.attendances}}" class='attendance-item'>
+        <view class='avatar'>
+          <image src="../../images/people_fill.svg" style='width:50rpx;height:50rpx'></image>
+        </view>
+        <view class='name'>{{item.name}}</view>
+        <view class='info'>
+          <text>{{item.email}}</text>
+          <text>{{item.phone}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+.intro_container{
+  width: 100%;
+}
+.sub_module{
+  width: 100%;
+  display: flex;
+  padding: 10px;
+}
+.module_header{
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  border-left: 3px solid #000;
+}
+.tips{
+  font-size: 30rpx;
+  color:#cd950c;
+  margin: 20rpx;
+}

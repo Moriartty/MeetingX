@@ -1,0 +1,18 @@
+<view class="navbar">
+  <view class="navbar-item" wx:for="{{navbar}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav">
+    <text class="navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
+  </view>
+</view>
+<view style='height:80rpx'></view>
+<view class="contacts_container {{currentNavbar==0 ? '' : 'hidden'}}">
+  <contactsList peopleList="{{peopleList}}" contactsList="{{contactsList}}" displayFlag="{{displayFlag}}" bind:_checkboxChange="checkboxChange">
+  </contactsList>
+</view>
+<view class="groups_container {{currentNavbar==1 ? '' : 'hidden'}}">
+  <groupsList groupsList="{{groupsList}}" displayFlag="{{displayFlag}}"></groupsList>
+</view>
+<view wx:if="{{displayFlag==1}}" class='footer'>
+  <view class='cancel'>取消</view>
+  <view class='show'>aaa</view>
+  <view class='confirm'>确定</view>
+</view>

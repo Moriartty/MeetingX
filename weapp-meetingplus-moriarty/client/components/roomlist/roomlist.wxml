@@ -1,0 +1,35 @@
+<scroll-view class='room_list_container'>
+  <view class='rooms_group' wx:for="{{roomList}}">
+    <view class='room_parent' wx:key="{{item.floorId}}" bindtap='toggleFloor' data-id="{{item.floorId}}">
+      <view class='room_parent_header'>
+        <image src='../../images/homepage_fill.png' style='width:50rpx;height:50rpx;'></image> 
+         <text class='floor_name'>{{item.floorName}}</text> 
+      </view>
+      <image class='toggle_floor' src="{{status[item.floorId]==false?'../../images/unfold.png':'../../images/packup.png'}}"></image>
+    </view>
+    <view class='room_child_list' wx:for="{{item.value}}" wx:for-index="i" wx:for-item="o">
+      <view class="room_child {{status[item.floorId]==false?'hidden':''}}">
+        <view class='room_header'>
+          <view class='room_name'>{{o.name}}</view>
+          <view class='order'><button size='mini' type='primary'>预定</button></view>
+        </view>
+        <view class='room_detail' wx:if="{{o.devices.main==''}}">
+          {{o.max_seat}}人
+        </view>
+        <view class='room_detail' wx:else>
+          {{o.max_seat}}人 | {{o.devices.main}}
+        </view>
+        <view class='order_details'>
+          <view class="order_details_text" wx:if="{{o.orderList.length==0}}">
+            当天空闲
+          </view>
+          <view wx:else>
+            <view class='order_details_text' wx:for="{{o.orderList}}" wx:for-item="value" style='color:#ff4d4f'>
+              {{value.begin}}~{{value.end}}   【{{value.subject}}】
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,25 @@
+<view class='container'>
+  <view>
+    <image src='../../images/logo.png' class='login-logo'></image>
+  </view>
+  <form bindsubmit='login'>
+    <view class='inputView'>
+      <image class='login-image' src='../../images/account.svg'></image>
+      <label class='login-label'>账号:</label>
+      <input type='text' class='input-text' name="userName"></input>
+    </view>
+    <view class='inputView'>
+      <image class='login-image' src='../../images/password.svg'></image>
+      <label class='login-label'>密码:</label>
+      <input type='password' class='input-text' name ="passWord"></input>
+    </view>
+    <view class='radioView'>
+      <radio-group class="radio-group">
+        
+      </radio-group>
+    </view>
+    <view class='buttonView'>
+      <button formType='submit'>登录</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,32 @@
+<!--pages/meeting/meeting.wxml-->
+<view class="searchBar">
+  <searchBar bind:_handleInput="handleInput" bind:_clear="handleInput"></searchBar>
+</view>
+<view class="navbar">
+  <view class="navbar-item" wx:for="{{navbar}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="swichNav">
+    <text class="navbar-text {{currentNavbar==idx ? 'active' : ''}}">{{item}}</text>
+  </view>
+</view>
+
+<view class="room-item-container {{currentNavbar==0 ? '' : 'hidden'}}" style='margin-top:184rpx'>
+  <view wx:if="{{myOrderListShow}}">
+      <timelist orderList="{{myOrderList}}"></timelist>
+  </view>
+  <view class='nodata' wx:else>
+    <view style='width:100%;text-align:center'>
+        <image src='../../images/document.svg' style='width:100px;height:100px'></image>
+        <view><text>暂无记录</text></view>
+    </view>
+  </view>
+</view>
+<view class="myself-item-container {{currentNavbar==1 ? '' : 'hidden'}}" style='margin-top:40px'>
+  <view wx:if="{{myRelatedListShow}}">
+    <timelist orderList="{{myRelatedList}}"></timelist>
+  </view>
+  <view class='nodata' wx:else>
+    <view style='width:100%;text-align:center'>
+        <image src='../../images/document.svg' style='width:100px;height:100px'></image>
+        <view><text>暂无记录</text></view>
+    </view>
+  </view>
+</view>

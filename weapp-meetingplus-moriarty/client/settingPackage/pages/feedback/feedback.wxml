@@ -1,0 +1,10 @@
+<view class="feedback-container">
+  <view class='feedback-body'>
+    <form>
+      <view class='.textarea'>
+        <textarea placeholder='请在此处写下您的宝贵建议'></textarea>
+      </view>
+      <button class='submit'>提交</button>
+    </form>
+  </view>
+</view>

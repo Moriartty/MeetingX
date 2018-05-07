@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "通讯录",
+  "navigationBarBackgroundColor": "#595959",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false,
+  "usingComponents":{
+    "contactsList": "../../components/contacts/contacts",
+    "groupsList":"../../components/groups/groups"
+  }
+}

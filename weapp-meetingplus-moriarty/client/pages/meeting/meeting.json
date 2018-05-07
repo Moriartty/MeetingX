@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的会议",
+  "navigationBarBackgroundColor": "#595959",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "timelist": "../../components/timelist/timelist",
+    "searchBar": "../../components/searchbar/searchbar"
+  }
+}

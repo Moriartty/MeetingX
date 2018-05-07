@@ -1,0 +1,7 @@
+<view class="room-item-container {{currentNavbar==1 ? '' : 'hidden'}}">
+  <view class='top_menu'>
+      <calendar bind:itemClick="handleCalendarClick" bind:backClick="handleCalendarClick" bind:nextClick="handleCalendarClick"></calendar>
+  </view>
+  <view style='height:250rpx'></view>
+  <roomlist roomList="{{parentList}}"></roomlist>
+</view>

@@ -1,0 +1,71 @@
+{
+  "pages": [
+    "pages/meeting/meeting",
+    "pages/index/index",
+    "pages/room/room",
+    "pages/home/home",
+    "pages/contact/contact",
+    "pages/login/login",
+    "pages/logs/logs",
+    "pages/conferenceDetails/conferenceDetails"
+  ],
+  "subPackages": [
+    {
+      "root": "settingPackage",
+      "pages": [
+        "pages/feedback/feedback",
+        "pages/introduce/introduce"
+      ]
+    },
+    {
+      "root": "contactsPackage",
+      "pages": [
+        "pages/addgroup/addgroup",
+        "pages/selectperson/selectperson"
+      ]
+    }
+  ],
+  "tabBar": {
+    "selectedColor": "#000000",
+    "color": "#8c8c8c",
+    "list": [
+      {
+        "iconPath": "images/manage.png",
+        "selectedIconPath": "images/manage_fill.png",
+        "pagePath": "pages/home/home",
+        "text": "待进行会议"
+      },
+      {
+        "iconPath": "images/homepage.png",
+        "selectedIconPath": "images/homepage_fill.png",
+        "pagePath": "pages/room/room",
+        "text": "会议室"
+      },
+      {
+        "iconPath": "images/time.png",
+        "selectedIconPath": "images/time_fill.png",
+        "pagePath": "pages/meeting/meeting",
+        "text": "我的会议"
+      },
+      {
+        "iconPath": "images/setup.png",
+        "selectedIconPath": "images/setup_fill.png",
+        "pagePath": "pages/index/index",
+        "text": "更多"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "networkTimeout": {
+    "request": 12000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  }
+}

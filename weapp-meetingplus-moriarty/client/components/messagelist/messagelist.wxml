@@ -1,0 +1,31 @@
+<scroll-view class='message_container'>
+  <view wx:for="{{messageList}}">
+    <view class='confirm' wx:if="{{index==1}}">
+      <view class='confirm_header'>待确认会议</view>
+      <view class='confirm_list' wx:for="{{item}}" wx:for-index="idx" wx:for-item="val">
+        <view class='confirm_item'>
+          <view class='confirm_item_header'>
+            <text>{{val.content}}</text>
+          </view>
+          <view class='confirm_item_body'>
+            <text>{{val.subject}}  {{val.time}}</text>
+          </view>
+          <view class='confirm_item_footer'>
+            <button class='accept' type='primary'>接受</button>
+            <button class='reject' type='warn'>拒绝</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='message' wx:else>
+      <view class='message_header'>与会消息</view>
+      <view class='message_list' wx:for="{{item}}" wx:for-index="idx" wx:for-item="val">
+        <view class='message_item'>
+          <view class='message_item_header'></view>
+          <view class='message_item_body'></view>
+          <view class='message_item_footer'></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,28 @@
+/* contactsPackage/pages/seleceperson/selectperson.wxss */
+.footer{
+  width: 100%;
+  height:7vh;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+.cancel{
+  flex: 1.0;
+  text-align: center;
+  /* color: red; */
+  font-weight: bold;
+}
+.show{
+  flex: 1.0;
+  text-align: center;
+  border-left: 2rpx solid #eee;
+  border-right: 2rpx solid #eee;
+}
+.confirm{
+  flex: 1.0;
+  text-align: center;
+  /* color: #52c41a; */
+  font-weight: bold;
+}

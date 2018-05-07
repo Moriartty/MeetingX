@@ -1,0 +1,9 @@
+<view class='contacts-container'>
+  <contactsList peopleList="{{peopleList}}" contactsList="{{contactsList}}" displayFlag="{{displayFlag}}" bind:_checkboxChange="checkboxChange">
+  </contactsList>
+</view>
+<view class='footer'>
+  <view class='cancel' bindtap='_cancel'>取消</view>
+  <view class='show'>{{checkedList.length}}</view>
+  <view class='confirm' bindtap='_confirm'>确定</view>
+</view>

@@ -1,0 +1,66 @@
+/* pages/contact/contact.wxss */
+.navbar {
+    position: fixed;
+    top:0;
+    display: flex;
+    border-bottom: 2rpx solid #eee;
+    width:100%;
+    height:80rpx;
+    background-color: white;
+    color: black;
+    z-index:11
+}
+.navbar-item {
+    flex: 1.0;
+    text-align: center;
+    font-size: 30rpx;
+    color: #999;
+    margin-bottom: -1px;
+}
+.navbar-text {
+    display: block;
+    width: 120rpx;
+    padding: 20rpx;
+    margin: auto;
+}
+.navbar-text.active {
+    border-bottom: 5rpx solid #000;
+    color: #000;
+    font-weight: bold;
+}
+.hidden{
+  display:none;
+}
+.contacts_container{
+  
+}
+.groups_container{
+
+}
+.footer{
+  width: 100%;
+  height:7vh;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+.cancel{
+  flex: 1.0;
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+.show{
+  flex: 1.0;
+  text-align: center;
+  border-left: 2rpx solid #eee;
+  border-right: 2rpx solid #eee;
+}
+.confirm{
+  flex: 1.0;
+  text-align: center;
+  color: #52c41a;
+  font-weight: bold;
+}

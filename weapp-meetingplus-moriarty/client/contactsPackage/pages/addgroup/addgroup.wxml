@@ -1,0 +1,31 @@
+<view class='addGroup_container'>
+  <form bindsubmit='post'>
+    <view class='input-item'>
+      <label>组名:</label>
+      <view class='input'>
+        <input placeholder='' bindinput='_handleInput'></input>
+      </view>
+    </view>
+    <view class='group-members'>
+      <view class="group-members-header">
+        <view><text>小组成员</text></view>
+        <view style='display:flex;align-items:center' bindtap='_handleAddPerson'><button wx:if="{{canAddPerson}}" size='mini' type='primary' class='addPerson' style='font-size:25rpx;'>添加成员</button></view>
+      </view>
+      <scroll-view>
+        <view wx:for="{{checkedList}}" class='group-members-item'>
+          <view class='avatar'>
+            <image src="../../../images/people_fill.svg" style='width:50rpx;height:50rpx'></image>
+          </view>
+          <view class='name'>{{item.name}}</view>
+          <view class='info'>
+            <text>{{item.email}}</text>
+            <text>{{item.phone}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='submit' bindtap='_handleAddGroup'>
+      <image src='../../../images/right.svg' style='width:30px;height:30px'></image>
+    </view>
+  </form>
+</view>

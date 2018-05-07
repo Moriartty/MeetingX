@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText":"待进行会议",
+  "navigationBarBackgroundColor":"#595959",
+  "navigationBarTextStyle":"white",
+  "usingComponents": {
+    "timeList": "../../components/timelist/timelist",
+    "messageList":"../../components/messagelist/messagelist"
+  }
+}

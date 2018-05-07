@@ -1,0 +1,26 @@
+<scroll-view class="orderList_group">
+  <view wx:for="{{orderList}}" class='orderList_parent' wx:key="{{item.id}}">
+    <view class='item_header'>{{index}}</view>
+    <view class='item_contents' wx:for="{{item}}" wx:for-index="idx" wx:for-item="value" wx:key="{{idx}}" data-id="{{value.id}}" bindtap='_handleClick'>
+      <view class='item_content' style="border-bottom:{{idx==item.length-1? '0px':'1px solid #eee'}}">
+        <view class='item_icon'>
+          <view wx:if="{{value.date1}}">
+            <text style='font-size:35rpx'>{{value.date1}}</text>
+            <text style='font-size:30rpx;display:block'>{{value.date2}}</text>
+          </view>
+          <view style='padding-top:25rpx;' wx:else>
+            <text style='font-size:30rpx;'>已过期</text>
+          </view>
+        </view>
+        <view class='item_body'>
+          <text class='meeting_title'>{{value.subject}}</text>
+          <text class='meeting_time'>{{value.begin}}~{{value.end}}</text>
+          <text class='meeting_room'>{{value.roomName}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='orderList_footer'>
+    <text>已没有更多</text>
+  </view>
+</scroll-view>

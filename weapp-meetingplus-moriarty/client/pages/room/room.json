@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "会议室",
+  "navigationBarBackgroundColor": "#595959",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh":false,
+  "usingComponents": {
+    "calendar": "../../components/calendar/calendar",
+    "roomlist":"../../components/roomlist/roomlist"
+  }
+}
