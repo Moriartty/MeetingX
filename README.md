@@ -11,4 +11,5 @@
 ![screenshot3](https://github.com/Moriartty/MeetingX/blob/master/DemoShow/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-09-02%20%E4%B8%8B%E5%8D%884.10.03.png)
 ![screenshot4](https://github.com/Moriartty/MeetingX/blob/master/DemoShow/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-09-02%20%E4%B8%8B%E5%8D%884.10.24.png)
 ![screenshot5](https://github.com/Moriartty/MeetingX/blob/master/DemoShow/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-09-02%20%E4%B8%8B%E5%8D%884.10.43.png)
-![screentshot6](https://github.com/Moriartty/MeetingX/blob/master/DemoShow/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-09-02%20%E4%B8%8B%E5%8D%884.10.57.png)
+![screenshot6](https://github.com/Moriartty/MeetingX/blob/master/DemoShow/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-09-02%20%E4%B8%8B%E5%8D%884.10.57.png)
+![screenshot7](https://github.com/Moriartty/MeetingX/blob/master/DemoShow/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-09-02%20%E4%B8%8B%E5%8D%884.11.06.png)
